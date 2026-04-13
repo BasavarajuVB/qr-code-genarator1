@@ -50,7 +50,7 @@ def generate_qr():
     dept = request.form['dept']
 
     # URL that QR will open
-    url = f"http://127.0.0.1:5000/details?name={name}&emp={emp}&dept={dept}"
+    url = f"https://qr-code-genarator-rajuvb.onrender.com/details?name={name}&emp={emp}&dept={dept}"
 
     # Generate QR
     img = qrcode.make(url)
