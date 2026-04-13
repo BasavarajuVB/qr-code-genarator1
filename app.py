@@ -75,9 +75,10 @@ def generate_qr():
     name = request.form['name']
     emp = request.form['emp']
     dept = request.form['dept']
+    designation = request.form['designation']
 
     # URL that QR will open
-    url = f"https://qr-code-genarator-rajuvb.onrender.com/details?name={name}&emp={emp}&dept={dept}"
+   url = f"https://qr-code-genarator-rajuvb.onrender.com/details?name={name}&designation={designation}&emp={emp}&dept={dept}"
 
     # Generate QR
     img = qrcode.make(url)
@@ -91,8 +92,9 @@ def details():
     name = request.args.get('name')
     emp = request.args.get('emp')
     dept = request.args.get('dept')
+    designation = request.args.get('designation')
 
-    return render_template_string(details_html, name=name, emp=emp, dept=dept)
+    return render_template_string(details_html, name=name,designation=designation,emp=emp,dept=dept)
 
 if __name__ == '__main__':
     app.run(debug=True)
