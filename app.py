@@ -73,12 +73,11 @@ def home():
 @app.route('/generate', methods=['POST'])
 def generate_qr():
     name = request.form['name']
+    designation = request.form['designation']
     emp = request.form['emp']
     dept = request.form['dept']
-    designation = request.form['designation']
 
-    # URL that QR will open
-   url = f"https://qr-code-genarator-rajuvb.onrender.com/details?name={name}&designation={designation}&emp={emp}&dept={dept}"
+    url = f"https://qr-code-genarator-rajuvb.onrender.com/details?name={name}&designation={designation}&emp={emp}&dept={dept}"
 
     # Generate QR
     img = qrcode.make(url)
