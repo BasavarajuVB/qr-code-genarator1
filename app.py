@@ -10,31 +10,66 @@ form_html = """
 <html>
 <head>
     <title>QR Generator</title>
-</head>
-<body>
-    <h2>Employee QR Generator</h2>
-    <form action="/generate" method="post">
-        Name: <input type="text" name="name"><br><br>
-        Emp Code: <input type="text" name="emp"><br><br>
-        Dept: <input type="text" name="dept"><br><br>
-        <button type="submit">Generate QR</button>
-    </form>
-</body>
-</html>
-"""
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            margin: 0;
+            padding: 0;
+        }
 
-# Show employee details
-details_html = """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Employee Details</title>
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 26px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background: #4facfe;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #00c6ff;
+        }
+    </style>
 </head>
 <body>
-    <h2>Employee Details</h2>
-    <p><b>Name:</b> {{name}}</p>
-    <p><b>Emp Code:</b> {{emp}}</p>
-    <p><b>Department:</b> {{dept}}</p>
+    <div class="container">
+        <h2>Employee QR Generator</h2>
+        <form action="/generate" method="post">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="text" name="emp" placeholder="Enter Employee Code" required>
+            <input type="text" name="dept" placeholder="Enter Department" required>
+            <button type="submit">Generate QR</button>
+        </form>
+    </div>
 </body>
 </html>
 """
