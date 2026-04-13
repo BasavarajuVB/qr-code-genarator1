@@ -10,66 +10,47 @@ form_html = """
 <html>
 <head>
     <title>QR Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 400px;
-            margin: 80px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 26px;
-        }
-
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        button {
-            background: #4facfe;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 15px;
-            width: 100%;
-        }
-
-        button:hover {
-            background: #00c6ff;
-        }
-    </style>
 </head>
-<body>
-    <div class="container">
-        <h2>Employee QR Generator</h2>
-        <form action="/generate" method="post">
-            <input type="text" name="name" placeholder="Enter Name" required>
-            <input type="text" name="emp" placeholder="Enter Employee Code" required>
-            <input type="text" name="dept" placeholder="Enter Department" required>
-            <button type="submit">Generate QR</button>
-        </form>
-    </div>
+<body style="font-family: Arial; background-color: #f4f6f8; text-align: center;">
+
+    <h2 style="color: #2c3e50; font-size: 28px;">Employee QR Generator</h2>
+
+    <form action="/generate" method="post" style="margin-top: 30px;">
+        
+        <label style="font-size: 18px;">Name:</label><br>
+        <input type="text" name="name" style="padding: 8px; width: 250px;"><br><br>
+
+        <label style="font-size: 18px;">Emp Code:</label><br>
+        <input type="text" name="emp" style="padding: 8px; width: 250px;"><br><br>
+
+        <label style="font-size: 18px;">Dept:</label><br>
+        <input type="text" name="dept" style="padding: 8px; width: 250px;"><br><br>
+
+        <button type="submit" 
+            style="padding: 10px 20px; font-size: 16px; background-color: #3498db; color: white; border: none; cursor: pointer;">
+            Generate QR
+        </button>
+    </form>
+
+</body>
+</html>
+"""
+
+# Show employee details
+details_html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<body style="font-family: Arial; background-color: #eef2f3; text-align: center;">
+
+    <h2 style="color: #2c3e50; font-size: 26px;">Employee Details</h2>
+
+    <p style="font-size: 18px;"><b style="color:#000;">Name:</b> {{name}}</p>
+    <p style="font-size: 18px;"><b style="color:#000;">Emp Code:</b> {{emp}}</p>
+    <p style="font-size: 18px;"><b style="color:#000;">Department:</b> {{dept}}</p>
+
 </body>
 </html>
 """
