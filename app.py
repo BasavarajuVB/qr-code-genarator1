@@ -13,17 +13,24 @@ form_html = """
 </head>
 <body style="font-family: Arial; background-color: #f4f6f8; text-align: center;">
 
-    <h2 style="color: #2c3e50; font-size: 28px;">Employee QR Generator</h2>
+    <h2 style="color: #2c3e50; font-size: 26px;">
+        Company Name: Enlite Smart Solutions Pvt Ltd.
+    </h2>
+
+    <h3 style="color: #34495e; font-size: 22px;">Employee QR Generator</h3>
 
     <form action="/generate" method="post" style="margin-top: 30px;">
         
-        <label style="font-size: 18px;">Name:</label><br>
+        <label style="font-size: 18px;">Employee Name:</label><br>
         <input type="text" name="name" style="padding: 8px; width: 250px;"><br><br>
 
-        <label style="font-size: 18px;">Emp Code:</label><br>
+        <label style="font-size: 18px;">Designation:</label><br>
+        <input type="text" name="designation" style="padding: 8px; width: 250px;"><br><br>
+
+        <label style="font-size: 18px;">EMP Code:</label><br>
         <input type="text" name="emp" style="padding: 8px; width: 250px;"><br><br>
 
-        <label style="font-size: 18px;">Dept:</label><br>
+        <label style="font-size: 18px;">Department:</label><br>
         <input type="text" name="dept" style="padding: 8px; width: 250px;"><br><br>
 
         <button type="submit" 
@@ -45,16 +52,20 @@ details_html = """
 </head>
 <body style="font-family: Arial; background-color: #eef2f3; text-align: center;">
 
-    <h2 style="color: #2c3e50; font-size: 26px;">Employee Details</h2>
+    <h2 style="color: #2c3e50; font-size: 24px;">
+        Enlite Smart Solutions Pvt Ltd.
+    </h2>
 
-    <p style="font-size: 18px;"><b style="color:#000;">Name:</b> {{name}}</p>
-    <p style="font-size: 18px;"><b style="color:#000;">Emp Code:</b> {{emp}}</p>
-    <p style="font-size: 18px;"><b style="color:#000;">Department:</b> {{dept}}</p>
+    <h3 style="color: #34495e;">Employee Details</h3>
+
+    <p style="font-size: 18px;"><b>Employee Name:</b> {{name}}</p>
+    <p style="font-size: 18px;"><b>Designation:</b> {{designation}}</p>
+    <p style="font-size: 18px;"><b>EMP Code:</b> {{emp}}</p>
+    <p style="font-size: 18px;"><b>Department:</b> {{dept}}</p>
 
 </body>
 </html>
 """
-
 @app.route('/')
 def home():
     return render_template_string(form_html)
